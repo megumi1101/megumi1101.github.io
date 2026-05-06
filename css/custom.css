@@ -1,3 +1,46 @@
+/* Web 字体在 _config.butterfly.yml inject.head（fonts.loli.net 镜像）；正文 Noto Sans SC、代码 JetBrains Mono */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: "JetBrains Mono", "Cascadia Mono", Consolas, monospace !important;
+}
+
+/* KaTeX：接近 LaTeX PDF 的「行间居中 + 略放大 + 留白」。数学字形仍用 KaTeX 自带（TeX 字距），勿改整块 .katex 的 font-family */
+#article-container .katex {
+  font-size: 1.08em;
+  color: var(--font-color);
+  -webkit-font-smoothing: antialiased;
+}
+#article-container .katex .text,
+#article-container .katex .texttt,
+#article-container .katex .cjk_fallback {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif !important;
+}
+/* markdown-it-katex 把 $$ 包在 <p> 里；主题 JS 再包一层 .katex-wrap —— 让「只有公式」的段落像讲义那样居中 */
+#article-container p:has(> .katex-wrap:only-child),
+#article-container p:has(> .katex-display:only-child) {
+  text-align: center;
+  margin: 1.35em 0 1.55em;
+}
+#article-container .katex-wrap {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+#article-container .katex-display {
+  margin: 0.35em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+#article-container .katex-display > .katex {
+  padding: 0.15em 0;
+  font-size: 1.22em;
+}
+
 /* 页脚与头图透明 */
 #footer {
     background: transparent !important;
