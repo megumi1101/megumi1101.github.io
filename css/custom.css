@@ -1,7 +1,17 @@
 /* Web 字体在 _config.butterfly.yml inject.head（fonts.loli.net 镜像）；正文 Noto Sans SC、代码 JetBrains Mono */
 body {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select,
+.gt-container,
+.gt-container * {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif !important;
 }
 
 code[class*="language-"],
